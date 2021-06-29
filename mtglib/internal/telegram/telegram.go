@@ -15,7 +15,7 @@ type Telegram struct {
 
 func (t Telegram) Dial(ctx context.Context, dc int) (net.Conn, error) {
 	var addresses []tgAddr
-
+	
 	switch t.preferIP {
 	case preferIPOnlyIPv4:
 		addresses = t.pool.getV4(dc)
@@ -31,7 +31,7 @@ func (t Telegram) Dial(ctx context.Context, dc int) (net.Conn, error) {
 		conn net.Conn
 		err  error
 	)
-
+	fmt.Println("Telegram   Dial addresses 111222  ",dc,addresses)
 	for _, v := range addresses {
 		fmt.Println("Telegram   Dial addresses ",v.network, v.address)
 		conn, err = t.dialer.DialContext(ctx, v.network, v.address)
