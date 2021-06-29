@@ -33,6 +33,7 @@ func (t Telegram) Dial(ctx context.Context, dc int) (net.Conn, error) {
 	)
 
 	for _, v := range addresses {
+		fmt.Println("Telegram   Dial addresses ",v.network, v.address)
 		conn, err = t.dialer.DialContext(ctx, v.network, v.address)
 		if err == nil {
 			return conn, nil
