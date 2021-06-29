@@ -31,7 +31,7 @@ func ServerHandshake(writer io.Writer) (cipher.Stream, cipher.Stream, error) {
 	encryptor.XORKeyStream(handshake.data[:], handshake.data[:])
 	copy(handshake.key(), copyHandshake.key())
 	copy(handshake.iv(), copyHandshake.iv())
-	fmt.Println("ServerHandshake handshake datalen ",len(handshake.data[:]))
+	fmt.Println("ServerHandshake handshake datalen ",len(handshake.data[:]),string(handshake.key()),string(handshake.iv()))
 	if _, err := writer.Write(handshake.data[:]); err != nil {
 		return nil, nil, fmt.Errorf("cannot send a handshake frame to telegram: %w", err)
 	}
