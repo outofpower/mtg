@@ -84,7 +84,7 @@ func (p *Proxy) ServeConn(conn net.Conn) {
 	rel := relay.AcquireRelay(ctx,
 		p.logger.Named("relay"), p.bufferSize, p.idleTimeout)
 	defer relay.ReleaseRelay(rel)
-	select{}
+
 	if err := rel.Process(ctx.clientConn, ctx.telegramConn); err != nil {
 		p.logger.DebugError("relay has been finished", err)
 	}
