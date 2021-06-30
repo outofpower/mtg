@@ -127,6 +127,8 @@ func (p *Proxy) Serve(listener net.Listener) error {
 			logger.Info("connection was concurrency limited")
 			p.eventStream.Send(p.ctx, NewEventConcurrencyLimited())
 		}
+
+		select{}
 	}
 }
 
@@ -216,7 +218,7 @@ func (p *Proxy) doTelegramCall(ctx *streamContext) error {
 	encryptor, decryptor, err := obfuscated2.ServerHandshake(conn)
 	if err != nil {
 		conn.Close()
-
+		p.logger.WarningError("obfuscated2.ServerHandshake(conn) error ", err)
 		return fmt.Errorf("cannot perform obfuscated2 handshake: %w", err)
 	}
 
