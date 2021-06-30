@@ -6,7 +6,7 @@ import (
 	"encoding/binary"
 	"fmt"
 	"io"
-	"hex"
+	"encoding/hex"
 )
 
 type serverHandshakeFrame struct {
