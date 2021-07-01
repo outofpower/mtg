@@ -127,8 +127,6 @@ func (p *Proxy) Serve(listener net.Listener) error {
 			logger.Info("connection was concurrency limited")
 			p.eventStream.Send(p.ctx, NewEventConcurrencyLimited())
 		}
-
-		select{}
 	}
 }
 
