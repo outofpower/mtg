@@ -23,13 +23,13 @@ type tgAddr struct {
 var (
 	productionV4Addresses = [][]tgAddr{
 		{ // dc1
-			{network: "tcp4", address: "192.168.1.23:12443"},
+			{network: "tcp4", address: "192.168.1.20:12443"},
 		},
 		{ // dc1
-			{network: "tcp4", address: "192.168.1.23:12443"},
+			{network: "tcp4", address: "192.168.1.20:12443"},
 		},
 		{ // dc1
-			{network: "tcp4", address: "192.168.1.23:12443"},
+			{network: "tcp4", address: "192.168.1.20:12443"},
 		},
 		// { // dc1
 		// 	{network: "tcp4", address: "149.154.175.50:443"},
