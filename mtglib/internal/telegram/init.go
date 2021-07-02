@@ -25,10 +25,16 @@ var (
 		{ // dc1
 			{network: "tcp4", address: "192.168.1.20:12443"},
 		},
-		{ // dc1
+		{ // dc2
 			{network: "tcp4", address: "192.168.1.20:12443"},
 		},
-		{ // dc1
+		{ // dc3
+			{network: "tcp4", address: "192.168.1.20:12443"},
+		},
+		{ // dc4
+			{network: "tcp4", address: "192.168.1.20:12443"},
+		},
+		{ // dc5
 			{network: "tcp4", address: "192.168.1.20:12443"},
 		},
 		// { // dc1
